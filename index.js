@@ -19,6 +19,7 @@ if (argv.subreddit) {
 console.log(
   `You want to fetch the subreddits of ${chalk.yellow(desiredSubreddit)}`
 );
+console.log(`==================`);
 
 const redditDomain = `https://www.reddit.com`;
 const redditUrl = `${redditDomain}/r/${desiredSubreddit}/top.json`;
