@@ -1,6 +1,7 @@
 const argv = require('yargs').usage('Usage: $0 --subreddit [string]').argv;
 const chalk = require('chalk');
 const readlineSync = require('readline-sync');
+const request = require('request');
 
 console.log(chalk.bgBlue.yellow('Starting application...'));
 
@@ -20,5 +21,20 @@ if (argv.subreddit) {
   desiredSubreddit = subreddit;
 }
 
-const redditUrl = `https://www.reddit.com/r/${desiredSubreddit}/top.json`;
-console.log(redditUrl);
+const redditDomain = `https://www.reddit.com`;
+const redditUrl = `${redditDomain}/r/${desiredSubreddit}/top.json`;
+
+const fetchData = async () => {
+  request(redditUrl, { json: true }, (err, res, body) => {
+    if (err) {
+      return console.log(err);
+    }
+    const topics = body.data.children;
+    topics.forEach((topic) => {
+      const { title, permalink } = topic.data;
+      console.log(`${title} => ${chalk.bgRed(redditDomain + permalink)}`);
+    });
+  });
+};
+
+fetchData();
