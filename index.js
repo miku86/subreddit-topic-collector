@@ -8,18 +8,17 @@ console.log(chalk.bgBlue.yellow('Starting application...'));
 let desiredSubreddit;
 
 if (argv.subreddit) {
-  console.log(
-    `You want to fetch the subreddits of ${chalk.yellow(argv.subreddit)}`
-  );
   desiredSubreddit = argv.subreddit;
 } else {
   console.log('You did not input an argument!');
   const subreddit = readlineSync.question(
     'Which Subreddit do you want to fetch?'
   );
-  console.log(`You want to fetch the subreddits of ${chalk.yellow(subreddit)}`);
   desiredSubreddit = subreddit;
 }
+console.log(
+  `You want to fetch the subreddits of ${chalk.yellow(desiredSubreddit)}`
+);
 
 const redditDomain = `https://www.reddit.com`;
 const redditUrl = `${redditDomain}/r/${desiredSubreddit}/top.json`;
