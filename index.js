@@ -1,4 +1,6 @@
-const argv = require('yargs').argv;
+const argv = require('yargs')
+  .usage('Usage: $0 --subreddit [string]')
+  .demandOption(['subreddit']).argv;
 const chalk = require('chalk');
 
 console.log(chalk.bgBlue.yellow('Starting application...'));
