@@ -25,5 +25,8 @@
   "homepage": "https://github.com/miku86/subreddit-topic-collector#readme",
   "devDependencies": {
     "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+    "yargs": "^13.3.0"
   }
 }
