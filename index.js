@@ -31,7 +31,9 @@ const fetchData = async () => {
     const topics = body.data.children;
     topics.forEach((topic) => {
       const { title, permalink } = topic.data;
-      console.log(`${title} => ${chalk.bgRed(redditDomain + permalink)}`);
+      console.log(`${chalk.bgRed(title.slice(0))}`);
+      console.log(`=> ${redditDomain + permalink}`);
+      console.log(`----------------------------`);
     });
   });
 };
