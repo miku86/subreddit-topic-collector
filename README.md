@@ -5,6 +5,7 @@ a cli tool to collect all topic for a custom subreddit
 ## Installation
 
 - Clone Repo
+- Install Packages: `npm install`
 
 ## Usage
 
