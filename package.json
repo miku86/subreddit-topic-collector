@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/miku86/subreddit-topic-collector#readme",
   "devDependencies": {
-    "nodemon": "^1.19.1"
+    "nodemon": "1.19.1"
   },
   "dependencies": {
     "chalk": "^2.4.2",
